@@ -1,5 +1,6 @@
 package api;
 
+import data.Constants;
 import data.Credentials;
 import data.TestData;
 import io.qameta.allure.Step;
@@ -8,8 +9,7 @@ import models.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static data.Constants.BOOKS_PATH;
-import static data.Constants.BOOK_PATH;
+import static data.Constants.*;
 import static data.Credentials.login;
 import static io.restassured.RestAssured.given;
 import static specs.TestSpec.*;
@@ -20,7 +20,7 @@ public class BookApi {
     public void addBookToProfile(AuthModel auth) {
 
         List<IsbnModel> collectionOfIsbns = new ArrayList<>();
-        collectionOfIsbns.add(new IsbnModel(TestData.book.getIsbn()));
+        collectionOfIsbns.add(new IsbnModel(BOOK_ISBN));
         AddListOfBooksModel addBooksRequest = new AddListOfBooksModel();
         addBooksRequest.setUserId(auth.getUserId());
         addBooksRequest.setCollectionOfIsbns(collectionOfIsbns);
@@ -51,7 +51,7 @@ public class BookApi {
 
         DeleteBookModel deleteBookRequest = new DeleteBookModel();
         deleteBookRequest.setUserId(auth.getUserId());
-        deleteBookRequest.setIsbn(TestData.book.getIsbn());
+        deleteBookRequest.setIsbn(BOOK_ISBN);
 
         given(requestSpec)
                 .header("Authorization", "Bearer " + auth.getToken())
