@@ -1,8 +1,5 @@
 package api;
 
-import data.Constants;
-import data.Credentials;
-import data.TestData;
 import io.qameta.allure.Step;
 import models.*;
 
@@ -10,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static data.Constants.*;
-import static data.Credentials.login;
 import static io.restassured.RestAssured.given;
 import static specs.TestSpec.*;
 

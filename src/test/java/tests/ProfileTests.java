@@ -1,7 +1,6 @@
 package tests;
 
 import api.LoginApi;
-import data.TestData;
 import models.AuthModel;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
