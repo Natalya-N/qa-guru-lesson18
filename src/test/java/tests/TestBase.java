@@ -11,12 +11,14 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import pages.ProfilePage;
 
 import java.util.Map;
 
 public class TestBase {
 
     protected final BookApi bookApi = new BookApi();
+    protected final ProfilePage profilePage = new ProfilePage();
 
     @BeforeAll
     static void setup() {
