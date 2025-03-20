@@ -7,8 +7,7 @@ import models.LoginModel;
 
 import static data.Constants.LOGIN_PATH;
 import static io.restassured.RestAssured.given;
-import static specs.TestSpec.requestSpec;
-import static specs.TestSpec.statusCode200Spec;
+import static specs.TestSpec.*;
 
 public class LoginApi {
 
@@ -25,7 +24,7 @@ public class LoginApi {
                         .when()
                         .post(LOGIN_PATH)
                         .then()
-                        .spec(statusCode200Spec)
+                        .spec(getBaseResponseSpec(200))
                         .extract().as(AuthModel.class);
     }
 

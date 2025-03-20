@@ -27,7 +27,7 @@ public class BookApi {
                 .when()
                 .post(BOOKS_PATH)
                 .then()
-                .spec(statusCode201Spec);
+                .spec(getBaseResponseSpec(201));
     }
 
     @Step("API Delete all books from user's profile")
@@ -39,7 +39,7 @@ public class BookApi {
                 .when()
                 .delete(BOOKS_PATH)
                 .then()
-                .spec(statusCode204Spec);
+                .spec(getBaseResponseSpec(204));
     }
 
     @Step("API Delete one book from user's profile")
@@ -55,7 +55,7 @@ public class BookApi {
                 .when()
                 .delete(BOOK_PATH)
                 .then()
-                .spec(statusCode204Spec);
+                .spec(getBaseResponseSpec(204));
     }
 
 }
