@@ -1,6 +1,7 @@
 package tests;
 
 import api.LoginApi;
+import jdk.jfr.Description;
 import models.AuthModel;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Test;
 public class ProfileTests extends TestBase {
 
     @Test
+    @Description("Проверка удаления одной книги из профайла пользователя")
     void deleteBookFromProfileTest() {
         AuthModel authResponse = new LoginApi().login();
         bookApi.deleteAllBooksFromProfile(authResponse);
